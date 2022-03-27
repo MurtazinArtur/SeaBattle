@@ -4,21 +4,18 @@ import exceptions.CreateVesselException;
 import ships.interfaces.Damager;
 import ships.interfaces.Sailable;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class Vessel implements Sailable {
-    private Point[] decks;
+    private final Point[] decks;
     private Damager damager;
 
     public Vessel(int decks) throws CreateVesselException {
-        if(decks > 4){
+        if (decks > 4) {
             throw new CreateVesselException("Вы указали недопустимую длину корабля");
         }
         this.decks = new Point[decks];
     }
 
-    public void attack(Point point){
+    public void attack(Point point) {
         damager.damage(point);
     }
 
@@ -26,7 +23,7 @@ public class Vessel implements Sailable {
 
     }
 
-    public Integer getCountDecks(){
+    public Integer getCountDecks() {
         return decks.length;
     }
 }
