@@ -3,10 +3,14 @@ package ships.models;
 public class Point {
     private int x;
     private int y;
+    public int useCount;
+    private Point origin;
+    // ;
 
     public Point(int x, int y) {
         this.x = x;
         this.y = y;
+       // this.origin = new Point(0, 0);
     }
 
     public int getX() {
@@ -23,6 +27,18 @@ public class Point {
 
     public void setY(int y) {
         this.y = y;
+    }
+
+    public int getUseCount() {
+        return useCount;
+    }
+
+    public void setUseCount(int useCount) {
+        this.useCount = useCount;
+    }
+
+    public Point getOrigin() {
+        return new Point(0,0);
     }
 
     public boolean isPointNearCurrent(Point point){
